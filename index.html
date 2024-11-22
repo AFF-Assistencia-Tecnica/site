@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AFF Assistência Técnica</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./assets/study.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+
+    if(localStorage?.theme == 'dark') {
+      document.documentElement.classList.add('dark')
+    }
+
+    tailwind.config = {
+        content: ["./*.html"],
+        theme: {
+        extend: {
+            colors: {
+            primary: {
+                blue: {
+                light: "#00ccdd"
+                }
+            }
+            }
+        }
+        },
+        darkMode: "class"
+    };
+
+    function toggleTheme() {
+        localStorage.theme = (!document.documentElement.classList.contains('dark'))
+         ? 'dark'
+         : 'light';
+
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition duration-300">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white dark:bg-gray-800 overflow-hidden">
+    <div class="container mx-auto flex items-center justify-between p-1">
+      <div class="flex items-center">
+        <img src="./assets/logo.png" alt="" class="size-16 rounded-full">
+        <h1 class="text-lg font-bold">AFF Assistência Técnica</h1>
+      </div>
+      <nav class="flex items-center space-x-4 text-sm">
+        <ul class="hidden md:flex space-x-4">
+          <li><a href="#services" class="hover:underline">Serviços</a></li>
+          <li><a href="#services" class="hover:underline">Serviços</a></li>
+          <li><a href="#about" class="hover:underline">Sobre Nós</a></li>
+          <li><a href="#contact" class="hover:underline">Contato</a></li>
+        </ul>
+        <div class="flex items-center space-x-4">
+          <a href="https://www.instagram.com/aff_assistencia_tecnica/" target="_blank" class="size-8"><img src="./assets/instagram.png" alt="instagram"></a>
+        </div>
+        <button
+          onclick="toggleTheme()" 
+          class="hover:bg-sky-400 hover:text-sky-800 text-white p-2 rounded-lg dark:text-gray-200 dark:hover:text-gray-800 dark:hover:bg-gray-200 flex items-center justify-center">
+          <i class="material-icons dark:hidden">wb_sunny</i>
+          <i class="material-icons hidden dark:inline">brightness_3</i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-100 py-20 text-center dark:bg-gray-800">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-4 flex items-center justify-center space-x-4"> 
+        <img src="assets/study.png" alt="" class="size-16">
+        <div>
+          Conserto Rápido e de Qualidade
+        </div>
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+        Especialistas em reparo de eletrônicos, garantindo o melhor serviço para você.
+      </p>
+      <a href="#contact" class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+        Fale Conosco
+      </a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20">
+    <div class="container mx-auto px-4">
+      <h3 class="text-2xl font-bold text-center text-blue-600 dark:text-blue-400 mb-8">Nossos Serviços</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white shadow-md rounded-lg p-6 text-center dark:bg-gray-800">
+          <img src="./assets/cellphone.jpg" alt="Reparo de Celulares" class="mx-auto mb-4 size-80">
+          <h4 class="text-xl font-bold text-gray-700 dark:text-gray-100">Reparo de Celulares</h4>
+          <p class="text-gray-600 dark:text-gray-300">Troca de telas, baterias e outros componentes.</p>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-6 text-center dark:bg-gray-800">
+          <img src="./assets/motherboard.jpg" alt="Manutenção de Computadores" class="mx-auto mb-4 size-80">
+          <h4 class="text-xl font-bold text-gray-700 dark:text-gray-100">Manutenção de Computadores</h4>
+          <p class="text-gray-600 dark:text-gray-300">Limpeza, upgrades e conserto de hardware.</p>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-6 text-center dark:bg-gray-800">
+          <img src="assets/videogame.webp" alt="Assistência em Eletrônicos" class="mx-auto mb-4 size-80">
+          <h4 class="text-xl font-bold text-gray-700 dark:text-gray-100">Assistência em Eletrônicos</h4>
+          <p class="text-gray-600 dark:text-gray-300">Consertamos TVs, videogames e mais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-gray-100 py-40 dark:bg-gray-800">
+    <div class="container mx-auto text-center px-4">
+      <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-8">Sobre Nós</h3>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        A AFF Assistência Técnica é referência em soluções tecnológicas acessíveis e de alta qualidade. Contamos com uma equipe experiente e qualificada, especializada em manutenção e suporte para computadores, notebooks, consoles e setups gamers. Nosso compromisso é oferecer diagnósticos precisos, peças originais e serviços de excelência, garantindo a durabilidade e o desempenho dos seus equipamentos.      </p>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact" class="py-20">
+    <div class="container mx-auto px-4">
+      <h3 class="text-2xl font-bold text-center text-blue-600 dark:text-blue-400 mb-8">Entre em Contato</h3>
+      <form class="max-w-lg mx-auto bg-white p-8 shadow-md rounded-lg dark:bg-gray-800">
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-bold dark:text-gray-100">Nome</label>
+          <input type="text" id="name" class="w-full p-3 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300 dark:bg-gray-900 dark:border-gray-700">
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-bold dark:text-gray-100">E-mail</label>
+          <input type="email" id="email" class="w-full p-3 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300 dark:bg-gray-900 dark:border-gray-700">
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block text-gray-700 font-bold dark:text-gray-100">Mensagem</label>
+          <textarea id="message" rows="5" class="w-full p-3 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300 dark:bg-gray-900 dark:border-gray-700"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+          Enviar
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-6 dark:bg-gray-800">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 AFF Assistência Técnica. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
